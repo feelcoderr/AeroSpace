@@ -1,0 +1,6 @@
+{
+  "name": "Aero Space by Ratnanjali",
+  "description": "Premium drone design and manufacturing company offering high-performance aerial solutions with a signature luxury aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
