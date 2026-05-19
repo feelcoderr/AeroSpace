@@ -30,13 +30,13 @@ import {
 import { useState, useEffect } from "react";
 
 // Generated Assets
-const HERO_IMAGE = "/src/assets/images/hero_drone_cinematic_1779180981734.png";
-const TACTICAL_DRONE = "/src/assets/images/tactical_drone_black_gold_1779181476882.png";
-const CARGO_DRONE = "/src/assets/images/heavy_cargo_drone_cinematic_1779181500883.png";
-const DETAIL_IMAGE = "/src/assets/images/drone_propeller_detail_1779180998040.png";
-const FLIGHT_IMAGE = "/src/assets/images/drone_flight_mountain_1779181873314.png";
-const BLUEPRINT_IMAGE = "/src/assets/images/drone_technical_blueprint_1779181891602.png";
-const FACTORY_IMAGE = "/src/assets/images/drone_factory_lab_1779181908041.png";
+const HERO_IMAGE = "/images/hero_drone_cinematic_1779180981734.png";
+const TACTICAL_DRONE = "/images/tactical_drone_black_gold_1779181476882.png";
+const CARGO_DRONE = "/images/heavy_cargo_drone_cinematic_1779181500883.png";
+const DETAIL_IMAGE = "/images/drone_propeller_detail_1779180998040.png";
+const FLIGHT_IMAGE = "/images/drone_flight_mountain_1779181873314.png";
+const BLUEPRINT_IMAGE = "/images/drone_technical_blueprint_1779181891602.png";
+const FACTORY_IMAGE = "/images/drone_factory_lab_1779181908041.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
