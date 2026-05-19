@@ -217,7 +217,7 @@ const FlightShowcase = () => (
         <SectionHeader subtitle="Performance" title="Mastering Every Environment" />
       </div>
       <div className="lg:col-span-8 rounded-sm overflow-hidden aspect-video border border-white/5 relative group">
-        <img src={FLIGHT_IMAGE} alt="Drone in Flight" className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-105" />
+        <img src={FLIGHT_IMAGE} alt="Drone in Flight" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black-rich/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
       <div className="lg:col-span-4 space-y-16 pl-0 lg:pl-12">
