@@ -115,11 +115,11 @@ const Navbar = () => {
 };
 
 const SectionHeader = ({ subtitle, title, centered = false }: { subtitle: string; title: string, centered?: boolean }) => (
-  <div className={`mb-24 ${centered ? 'text-center' : ''}`}>
-    <span className="text-[10px] font-mono uppercase tracking-[0.6em] text-gold/60 block mb-6 px-1">
+  <div className={`mb-32 ${centered ? 'text-center' : ''}`}>
+    <span className="text-[11px] font-mono uppercase tracking-[0.8em] text-gold/50 block mb-6 px-1">
       // {subtitle}
     </span>
-    <h2 className="text-5xl md:text-7xl font-display font-light uppercase tracking-tight leading-[1.1]">
+    <h2 className="text-5xl md:text-8xl font-display font-light uppercase tracking-tighter leading-[0.95]">
       {title}
     </h2>
   </div>
@@ -153,7 +153,7 @@ const Hero = () => (
           // INITIALIZING FLIGHT PROTOCOLS v4.0
         </motion.div>
 
-        <h1 className="text-6xl md:text-[11rem] font-display font-bold uppercase tracking-tighter leading-[0.75] mb-16 perspective-1000">
+        <h1 className="text-7xl md:text-[12rem] font-display font-bold uppercase tracking-tighter leading-[0.7] mb-16 perspective-1000">
           <motion.span
             initial={{ rotateX: 90, opacity: 0 }}
             animate={{ rotateX: 0, opacity: 1 }}
@@ -166,7 +166,7 @@ const Hero = () => (
             initial={{ rotateX: 90, opacity: 0 }}
             animate={{ rotateX: 0, opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="gold-text-gradient italic font-extralight block"
+            className="gold-text-gradient italic font-extralight block tracking-[-0.05em]"
           >
             MASTERY
           </motion.span>
@@ -176,16 +176,15 @@ const Hero = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-24"
+          className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32"
         >
-          <div className="relative">
-            <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-px h-12 bg-gold/50" />
-            <p className="text-white/40 text-xs md:text-sm max-w-xs text-left leading-relaxed uppercase tracking-[0.2em] font-light">
+          <div className="relative pl-8 border-l border-gold/30">
+            <p className="text-white/40 text-[10px] md:text-xs max-w-sm text-left leading-relaxed uppercase tracking-[0.3em] font-light">
               Designing the future of autonomous <br />aerospace systems with unparalleled precision.
             </p>
           </div>
           
-          <button className="group relative px-16 py-7 bg-white text-black font-bold uppercase tracking-[0.4em] text-[10px] rounded-sm transition-all duration-500 overflow-hidden">
+          <button className="group relative px-20 py-8 bg-white text-black font-bold uppercase tracking-[0.5em] text-[10px] rounded-sm transition-all duration-500 overflow-hidden">
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">Explore Systems</span>
             <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
           </button>
@@ -217,21 +216,22 @@ const FlightShowcase = () => (
       <div className="lg:col-span-12 mb-12">
         <SectionHeader subtitle="Performance" title="Mastering Every Environment" />
       </div>
-      <div className="lg:col-span-8 rounded-sm overflow-hidden aspect-video border border-white/5">
-        <img src={FLIGHT_IMAGE} alt="Drone in Flight" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+      <div className="lg:col-span-8 rounded-sm overflow-hidden aspect-video border border-white/5 relative group">
+        <img src={FLIGHT_IMAGE} alt="Drone in Flight" className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black-rich/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
-      <div className="lg:col-span-4 space-y-12">
-        <p className="text-2xl font-light leading-relaxed text-white/60">
+      <div className="lg:col-span-4 space-y-16 pl-0 lg:pl-12">
+        <p className="text-3xl font-light leading-snug text-white/50 tracking-tight">
           Our systems are tested in the most extreme conditions on Earth, from arctic altitudes to equatorial humidity.
         </p>
-        <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
+        <div className="grid grid-cols-2 gap-12 pt-12 border-t border-white/10">
           <div>
-            <span className="text-4xl font-display font-bold text-gold block mb-2">90</span>
-            <span className="text-[10px] uppercase tracking-widest text-white/30">Min Endurance</span>
+            <span className="text-5xl font-display font-medium text-gold block mb-3">90</span>
+            <span className="text-[11px] uppercase tracking-[0.4em] text-white/20">Min Endurance</span>
           </div>
           <div>
-            <span className="text-4xl font-display font-bold text-gold block mb-2">30KM</span>
-            <span className="text-[10px] uppercase tracking-widest text-white/30">Stable Range</span>
+            <span className="text-5xl font-display font-medium text-gold block mb-3">30KM</span>
+            <span className="text-[11px] uppercase tracking-[0.4em] text-white/20">Stable Range</span>
           </div>
         </div>
       </div>
@@ -316,42 +316,56 @@ const Technology = () => (
   </section>
 );
 
+const Footnote = () => (
+   <div className="max-w-7xl mx-auto mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] uppercase font-mono tracking-[0.4em] text-white/10">
+      <span>© 2026 Aero Space by Ratnanjali</span>
+      <div className="flex gap-12">
+        <span>Zurich</span>
+        <span>London</span>
+        <span>Singapore</span>
+      </div>
+    </div>
+);
+
 const Footer = () => (
-  <footer className="py-32 px-8 border-t border-white/5 bg-black-rich">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-24">
-      <div className="max-w-sm">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-8 h-8 border border-gold rounded-full flex items-center justify-center p-[2px]">
+  <footer className="py-48 px-8 border-t border-white/5 bg-black-rich">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-32">
+      <div className="max-w-md">
+        <div className="flex items-center gap-5 mb-10">
+          <div className="w-10 h-10 border border-gold rounded-full flex items-center justify-center p-[2px]">
             <div className="w-full h-full bg-gold rounded-full" />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-display font-bold tracking-[0.2em] leading-none mb-1">AERO SPACE</span>
-            <span className="text-[8px] font-mono text-gold/60 tracking-[0.4em] leading-none uppercase">BY RATNANJALI</span>
+            <span className="text-xl font-display font-bold tracking-[0.4em] leading-none mb-1">AERO SPACE</span>
+            <span className="text-[9px] font-mono text-gold/60 tracking-[0.5em] leading-none uppercase">BY RATNANJALI</span>
           </div>
         </div>
-        <p className="text-white/30 text-xs uppercase tracking-widest leading-loose">
-          Global leaders in autonomous drone technology and bespoke aerospace manufacturing. Zurich, Switzerland.
+        <p className="text-white/30 text-[11px] uppercase tracking-[0.25em] leading-loose">
+          Global leaders in autonomous drone technology and bespoke aerospace manufacturing. Engineering for the high-consequence environments of tomorrow.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-[10px] font-bold uppercase tracking-[0.3em]">
-        <div className="flex flex-col gap-6">
-          <span className="text-gold">Sectors</span>
-          <a href="#" className="text-white/40 hover:text-white">Defense</a>
-          <a href="#" className="text-white/40 hover:text-white">Industrial</a>
-          <a href="#" className="text-white/40 hover:text-white">Survey</a>
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-24 text-[11px] font-bold uppercase tracking-[0.4em]">
+        <div className="flex flex-col gap-8">
+          <span className="text-gold/50 font-mono text-[9px] mb-2 tracking-[0.1em]">/ SECTORS</span>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Defense</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Industrial</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Survey</a>
         </div>
-        <div className="flex flex-col gap-6">
-          <span className="text-gold">Company</span>
-          <a href="#" className="text-white/40 hover:text-white">Ethics</a>
-          <a href="#" className="text-white/40 hover:text-white">Intel</a>
-          <a href="#" className="text-white/40 hover:text-white">Careers</a>
+        <div className="flex flex-col gap-8">
+          <span className="text-gold/50 font-mono text-[9px] mb-2 tracking-[0.1em]">/ ARCHIVE</span>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Technical</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Design</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Flight</a>
+        </div>
+        <div className="flex flex-col gap-8">
+          <span className="text-gold/50 font-mono text-[9px] mb-2 tracking-[0.1em]">/ ACCESS</span>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Contact</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Careers</a>
+          <a href="#" className="text-white/20 hover:text-gold transition-colors">Privacy</a>
         </div>
       </div>
     </div>
-    <div className="max-w-7xl mx-auto mt-32 pt-8 border-t border-white/5 flex justify-between text-[10px] uppercase font-mono tracking-widest text-white/10">
-      <span>© 2026 Aero Space by Ratnanjali</span>
-      <span>Zurich • London • Singapore</span>
-    </div>
+    <Footnote />
   </footer>
 );
 
